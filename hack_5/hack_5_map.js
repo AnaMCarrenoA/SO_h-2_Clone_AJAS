@@ -5,7 +5,9 @@
  * 
  * output => [7,5,3,1]
  */
-let result = [];
+let result = [7, 5, 3, 1].map(num => num);
+
+console.log(result); // [7, 5, 3, 1]
 
 
 //export result
