@@ -15,9 +15,54 @@
  * 
  * output => ["h@ck","one",2,"three",4,"five","h@ck","f00","Bar","b@z","quX","3ch0","h@ck"]   
  */
-let numberArray = [1,2,3,4,5];
-let stringArray = ["foo","bar","baz","qux","echo"]
-let result = [];
+let array1 = [1, 2, 3, 4, 5];
+let array2 = ["foo", "bar", "baz", "qux", "echo"];
+
+result = array1.concat(array2);
+
+for (let i = 0; i < result.length; i++) {
+  if (typeof result[i] === "number") {
+    switch (result[i]) {
+      case 1:
+        result[i] = "one";
+        break;
+      case 3:
+        result[i] = "three";
+        break;
+      case 5:
+        result[i] = "five";
+        break;
+    }
+  }
+}
+
+for (let i = 0; i < result.length; i++) {
+  if (typeof result[i] === "string") {
+    switch (result[i]) {
+      case "foo":
+        result[i] = "f00";
+        break;
+      case "bar":
+        result[i] = "Bar";
+        break;
+      case "baz":
+        result[i] = "b@z";
+        break;
+      case "qux":
+        result[i] = "quX";
+        break;
+      case "echo":
+        result[i] = "3ch0";
+        break;
+    }
+  }
+}
+
+result.unshift("h@ck");
+result.push("h@ck");
+result.splice(result.length / 2, 0, "h@ck");
+
+console.log(result);
 
 
 //export result
